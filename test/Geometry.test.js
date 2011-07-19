@@ -57,5 +57,20 @@ module.exports = {
 	multipoint.removePoint(new OpenLayers.Geometry.Point(1,0));
 	console.log(multipoint.components);
 	done();
+    },
+
+    /*
+     * Curve
+     * ======
+     */
+    "<Curve>": function(done) {
+	var points= [ 
+	    new OpenLayers.Geometry.Point(0,0),
+	    new OpenLayers.Geometry.Point(0,1),
+	    new OpenLayers.Geometry.Point(1,0),
+	    new OpenLayers.Geometry.Point(1,1)
+	];
+	var curve= new OpenLayers.Geometry.Curve(points);
+	done();
     }
 };
