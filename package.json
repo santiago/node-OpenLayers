@@ -1,0 +1,17 @@
+{
+  "name": "node-OpenLayers",
+  "description": "Bringing OpenLayers to Node.js applications",
+  "version": "0.0.1",
+  "homepage": "http://github.com/santiago/node-OpenLayers",
+  "author": "Santiago GL",
+  "repository": "git://github.com/santiago/node-OpenLayers",
+  "engines": {
+    "node": ">= 0.4.3 < 0.5.0"
+  },
+  "devDependencies": { "expresso": "0.7.7" },
+  "dependencies": {
+ }, 
+  "scripts": {
+    "test": "make test"
+  }
+}
