@@ -227,7 +227,19 @@ module.exports = {
 	var point= new OpenLayers.Geometry.Point(1,0.5);
 	var linear_ring= new OpenLayers.Geometry.LinearRing(points);
 	var polygon= new OpenLayers.Geometry.Polygon(linear_ring);
-	console.log(polygon.containsPoint(point));
+	// console.log(polygon.containsPoint(point));
+	done();
+    },
+    "<Polygon#getGeodesicArea>": function(done) {
+	var points= [ 
+	    new OpenLayers.Geometry.Point(0,0),
+	    new OpenLayers.Geometry.Point(0,1),
+	    new OpenLayers.Geometry.Point(1,1),
+	    new OpenLayers.Geometry.Point(2,0)
+	];    
+	var linear_ring= new OpenLayers.Geometry.LinearRing(points);
+	var polygon= new OpenLayers.Geometry.Polygon(linear_ring);
+	console.log(polygon.getGeodesicArea());
 	done();
     },
     "<Polygon.createRegularPolygon>": function(done) {

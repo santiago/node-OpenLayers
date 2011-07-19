@@ -7,6 +7,7 @@ JSLINT_PARAMS := --exclude_files model.js --custom_jsdoc_tags public,static --re
 test: 
 	# $(EXPRESSO) --serial test/BaseTypes.test.js
 	$(EXPRESSO) --serial test/Geometry.test.js
+	# $(EXPRESSO) --serial test/Projection.test.js
 
 jslint: 
 	$(JSLINT) $(JSLINT_PARAMS)
