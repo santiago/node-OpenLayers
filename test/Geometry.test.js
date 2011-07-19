@@ -1,6 +1,8 @@
 var OpenLayers= require('../lib/OpenLayers');
 var assert    = require('assert');
 
+var curve;
+
 module.exports = {
     /*
      * Point
@@ -14,13 +16,13 @@ module.exports = {
 	var point_A= new OpenLayers.Geometry.Point(0,0);
 	var point_B= new OpenLayers.Geometry.Point(2,1);
 	var d= point_A.distanceTo(point_B);
-	console.log(d);
+	// console.log(d);
 	done();
     },
     "<Point#getCentroid> it should calculate centroid": function(done) {
 	var point= new OpenLayers.Geometry.Point(0,0);
 	var centroid= point.getCentroid();
-	console.log(centroid);
+	// console.log(centroid);
 	done();
     },
 
@@ -45,7 +47,7 @@ module.exports = {
 	];
 	var multipoint= new OpenLayers.Geometry.MultiPoint(points);
 	multipoint.addPoint(new OpenLayers.Geometry.Point(1,0));
-	console.log(multipoint.components);
+	// console.log(multipoint.components);
 	done();
     },
     "<MultiPoint#removePoint>": function(done) {
@@ -55,7 +57,7 @@ module.exports = {
 	];
 	var multipoint= new OpenLayers.Geometry.MultiPoint(points);
 	multipoint.removePoint(new OpenLayers.Geometry.Point(1,0));
-	console.log(multipoint.components);
+	// console.log(multipoint.components);
 	done();
     },
 
@@ -70,7 +72,14 @@ module.exports = {
 	    new OpenLayers.Geometry.Point(1,0),
 	    new OpenLayers.Geometry.Point(1,1)
 	];
-	var curve= new OpenLayers.Geometry.Curve(points);
+	curve= new OpenLayers.Geometry.Curve(points);
+	done();
+    },
+    "<Curve#getLength>": function(done) {
+	var length= curve.getLength();
+	// should be 3*sqrt(2) and it is :)
+	// console.log(length);
 	done();
     }
+	
 };
